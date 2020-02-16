@@ -11,6 +11,14 @@ html {
   --color-text: #333333;
 }
 
+// the color variables for dark mode
+html[data-theme="dark"] {
+  --bg: #333333;
+  --bg-panel: #434343;
+  --color-headings: #0077ff;
+  --color-text: #b5b5b5;
+}
+
 body {
   background-color: var(--bg);
 }
