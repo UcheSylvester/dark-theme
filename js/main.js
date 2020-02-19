@@ -22,3 +22,28 @@ const trans = () => {
     html.classList.remove("transition");
   }, 1000);
 };
+
+// GRAPHQL
+
+getCharacterQuery = () => {
+  return JSON.stringify({
+    query: `
+    {
+      launches {
+        launches {
+          id
+        }
+      }
+    }
+    `
+  });
+};
+
+fetch("http://localhost:4000/", {
+  method: "POST",
+  headers: { "Content-Type": "Application/json" },
+  body: getCharacterQuery()
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
